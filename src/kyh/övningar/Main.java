@@ -15,6 +15,7 @@ public class Main {
 
     övn1();
     övn2();
+    övn4();
   }
 
 
@@ -50,5 +51,20 @@ public class Main {
     System.out.println("     Defekta tal: "+n_def);
     System.out.println("    Perfekta tal: "+n_perf);
     System.out.println("Överflödande tal: "+n_över);
+  }
+
+
+  //  övning 4, räkna upp alla Kaprekar-tal under 1000
+  public static void övn4() {
+    System.out.println("Kaprekar-tal under 1000:");
+
+    for (int n = 1; n <= 999; ++n) {
+      int siffror = (int)Math.ceil(Math.log10(n+1));
+      int exp = (int)Math.pow(10, siffror);
+      int n2 = n*n;
+      int a = n2/exp, b = n2%exp;
+
+      if (a+b == n)  System.out.println(n+": "+n+"² = "+n2+", "+a+"+"+b+" = "+n);
+    }
   }
 }
