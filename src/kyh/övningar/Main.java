@@ -15,6 +15,7 @@ public class Main {
 
     övn1();
     övn2();
+    övn3();
     övn4();
   }
 
@@ -53,6 +54,26 @@ public class Main {
     System.out.println("Överflödande tal: "+n_över);
   }
 
+
+  //  övning 3, generera slumptal i intervall
+  public static void övn3() {
+    System.out.print("Intervall (ex. 10 500):  ");
+    int start = in.nextInt(), slut = in.nextInt();
+
+    int gen = 40429;
+    for (int n = 10000; n > 0; --n) {
+      gen %= 46341;
+      gen = gen*40853 + 20071;
+      int r = start + gen%(slut-start);
+      if (r < start  ||  r > slut) {
+        System.out.println("!!! Slumptalsgeneratorn gav ett felaktigt tal");
+        return;
+      }
+
+    }
+
+    System.out.println("Alla slumptal låg inom intervallet");
+  }
 
   //  övning 4, räkna upp alla Kaprekar-tal under 1000
   public static void övn4() {
